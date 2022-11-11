@@ -33,7 +33,7 @@ export function postCart (payload) {
   console.log("payload",payload);
   return async function (dispatch) {
     const response = await axios.post('https://front-test-api.herokuapp.com/api/cart', payload);
-    console.log("respuesta",response);
+    console.log("respuesta",response.data);
     localStorage.setItem("cartNumber", JSON.stringify(response.data.count)); // info en local storage
     return dispatch({
       type: POST_CART,

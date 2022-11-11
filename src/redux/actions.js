@@ -32,13 +32,17 @@ export function getDetails(id) {
 export function postCart (payload) {
   console.log("payload",payload);
   return async function (dispatch) {
-    const response = await axios.post('https://front-test-api.herokuapp.com/api/cart', payload);
+    try {
+      const response = await axios.post('https://front-test-api.herokuapp.com/api/cart', payload);
     console.log("respuesta",response.data);
     localStorage.setItem("cartNumber", JSON.stringify(response.data.count)); // info en local storage
     return dispatch({
       type: POST_CART,
       payload: response.data.count,
     });
+    } catch (error) {
+      console.log(error)
+    }
   };
 }
 

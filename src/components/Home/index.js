@@ -32,7 +32,7 @@ const [search, setSearch] = useState("");
         el.model.toLowerCase().includes(search)
       );
     });
-    console.log("que es", infoFilter);
+    console.log("infoFilter", infoFilter);
     return infoFilter;
   };
 

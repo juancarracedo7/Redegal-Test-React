@@ -1,0 +1,32 @@
+.header {
+    background-color: #fbfbfb;
+    color: rgb(27, 20, 20);
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: grey;
+}
+
+.logo a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.breadcrumbs {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    color: grey;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: inherit;
+}

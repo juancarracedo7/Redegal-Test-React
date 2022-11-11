@@ -49,8 +49,8 @@ const [search, setSearch] = useState("");
     <div className={styles.cardContainer}>
         {data.filter((e) => {
             return (
-                e.brand.toLowerCase().includes(search) ||
-                e.model.toLowerCase().includes(search)
+                e.brand.toLowerCase().includes(search.toLocaleLowerCase()) ||
+                e.model.toLowerCase().includes(search.toLocaleLowerCase())
             )
         }).map((phone) => (
             <Link className={styles.cardLink} to={`details/${phone.id}`}>

@@ -2,7 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import { BsCart3 } from "react-icons/bs";
 import { useSelector } from "react-redux";
 import styles from "./Header.module.css";
-import { useEffect } from "react";
+
 
 
 export default function Header() {

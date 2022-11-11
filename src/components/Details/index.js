@@ -53,18 +53,18 @@ export default function Details() {
         <div className={styles.info}>
           <h2>Description</h2>
           <ul>
-            <li>{data?.brand}</li>
-            <li>{data?.model}</li>
-            <li>{data?.price}</li>
-            <li>{data?.cpu}</li>
-            <li>{data?.ram}</li>
-            <li>{data?.os}</li>
-            <li>{data?.displayResolution}</li>
-            <li>{data?.battery}</li>
-            <li>{data?.primaryCamera}</li>
-            <li>{data?.secondaryCmera}</li>
-            <li>{data?.dimentions}</li>
-            <li>{data?.weight}</li>
+            <li>Brand : {data?.brand}</li>
+            <li>Model : {data?.model}</li>
+            <li>Price : {data?.price}€</li>
+            <li>CPU : {data?.cpu}</li>
+            <li>Ram : {data?.ram}</li>
+            <li>Os : {data?.os}</li>
+            <li>Resolution : {data?.displayResolution}</li>
+            <li>Battery : {data?.battery}</li>
+            <li>1 Camera : {data?.primaryCamera}</li>
+            <li>2 Camera : {data?.secondaryCmera}</li>
+            <li>Dimentions : {data?.dimentions}</li>
+            <li>Weight : {data?.weight}</li>
           </ul>
           <div className={styles.selectContainer}>
             <select onChange={handleColor} className={styles.select}>

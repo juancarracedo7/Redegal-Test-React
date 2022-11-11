@@ -1,8 +1,10 @@
+import { Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux"
 import { Link } from "react-router-dom";
 import { getAllPhones } from "../../redux/actions";
 import Header from "../Header";
+import styles from "./Home.module.css";
 
 
 export default function Home() {
@@ -37,18 +39,23 @@ const [search, setSearch] = useState("");
   return (
     <>
     <Header />
-    <input type="text" placeholder="Search" onChange={handleInputChange} />
-      <button onClick={handleButton}>Search</button>
-    <div>
+    <div className={styles.header}>
+        <h1>List View</h1>
+        <div>
+        <TextField id="outlined-basic" label="Search" variant="outlined" size="small" onChange={handleInputChange} />
+          <Button style={{marginLeft: "15px"}} variant="contained" onClick={handleButton}>Search</Button>
+        </div>
+      </div>
+    <div className={styles.cardContainer}>
         {data.filter((e) => {
             return (
                 e.brand.toLowerCase().includes(search) ||
                 e.model.toLowerCase().includes(search)
             )
         }).map((phone) => (
-            <Link to={`details/${phone.id}`}>
-            <div key={phone.id}>
-            <img src={phone.imgUrl} alt={phone.model} />
+            <Link className={styles.cardLink} to={`details/${phone.id}`}>
+            <div className={styles.card} key={phone.id}>
+            <img  src={phone.imgUrl} alt={phone.model} />
             <h1>{phone.brand}</h1>
             <h2>{phone.model}</h2>
             <h3>{phone.price}</h3>
